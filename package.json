@@ -1,0 +1,57 @@
+{
+  "name": "@afria/sdk",
+  "version": "0.0.1",
+  "description": "🔮 Afria's Development Kit",
+  "author": "Nathan A. | AfriaDev",
+  "repository": "https://github.com/AfriaDev/sdk",
+  "license": "UNLICENSED",
+  "keywords": [
+    "Afria",
+    "SDK"
+  ],
+  "files": [
+    "dist"
+  ],
+  "module": "dist/sdk.esm.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "test": "jest",
+    "clean": "rm -rf dist build package",
+    "ts-node": "ts-node",
+    "docs": "typedoc --entryPoints src/main.ts",
+    "start": "npm run build",
+    "start:dev": "nodemon.json",
+    "build": "tsc -p tsconfig.json",
+    "build-all": "yarn clean && yarn prettier-format && yarn build",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "publish-major": "npm version major --force  && yarn build-all && npm publish --registry=https://registry.npmjs.org/",
+    "publish-minor": "npm version minor --force && yarn build-all && npm publish --registry=https://registry.npmjs.org/",
+    "publish-patch": "npm version patch --force && yarn build-all && npm publish --registry=https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "big.js": "^5.2.2",
+    "decimal.js-light": "^2.5.0",
+    "jsbi": "^3.1.1",
+    "tiny-invariant": "^1.2.0",
+    "tiny-warning": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/big.js": "^4.0.5",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "esbuild": "^0.11.11",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^26.6.3",
+    "onchange": "^6.1.0",
+    "prettier": "2.5.1",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.5.4"
+  }
+}
