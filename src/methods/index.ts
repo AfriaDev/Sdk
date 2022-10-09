@@ -6,6 +6,7 @@ import { getExponentialParts, isExponential } from '../utils';
 export default class Methods {
   /**
    * Converts a large string number into a human-readable string while maintaining precision
+   * Forked from https://github.com/shrpne/from-exponential since we've updated it for typescript and added helper methods
    */
   static parseStringifiedNumber(num: number | string | Array<string>): string {
     const eParts: Array<string> = getExponentialParts(num);

@@ -14,7 +14,7 @@ Import { Methods as AfriaMethods } from '@afria/sdk'
 
 const exponent = 8.21e16
 
-UnwantedMethods.parseStringifiedNumber(exponent) // 82100000000000000
+AfriaMethods.parseStringifiedNumber(exponent) // 82100000000000000
 ```
 
 - Convert large numbers into prefixed S.I Numbers. Ex 1000000 = 1M
